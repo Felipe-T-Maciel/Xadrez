@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Tabuleiro {
-    private ArrayList<Posicao> posicoes;
+    private ArrayList<Posicao> posicoes = new ArrayList<>();
 
     public void removerPeca(Posicao posicao){
 
