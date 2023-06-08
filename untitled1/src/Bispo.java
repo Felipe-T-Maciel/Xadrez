@@ -15,8 +15,7 @@ public class Bispo extends Peca{
                 i < tabuleiro.getPosicoes().size(); i+=7) {
 
             Posicao posicao = tabuleiro.getPosicoes().get(i);
-            verificaPeca(posicao, possiveisMovimentos);
-            if (i%8==0){
+            if (i%8==0 || verificaPeca(posicao, possiveisMovimentos)){
                 break;
             }
 
@@ -24,21 +23,14 @@ public class Bispo extends Peca{
 
         for (int i = (possicaoNoTabuleiro % 8 == 0 ? -1 : possicaoNoTabuleiro-7); i > 0; i-=7) {
             Posicao posicao = tabuleiro.getPosicoes().get(i);
-
-            verificaPeca(posicao, possiveisMovimentos);
-
-
-            if ((i + 1) %8==0){
+            if ((i + 1) %8==0 || verificaPeca(posicao, possiveisMovimentos)){
                 break;
             }
         }
 
         for (int i = (possicaoNoTabuleiro % 8 == 0 ? 64 : possicaoNoTabuleiro+9); i < tabuleiro.getPosicoes().size(); i+=9) {
             Posicao posicao = tabuleiro.getPosicoes().get(i);
-
-            verificaPeca(posicao, possiveisMovimentos);
-
-            if ((i + 1) %8==0){
+            if ((i + 1) %8==0 || verificaPeca(posicao, possiveisMovimentos)){
                 break;
             }
         }
@@ -46,7 +38,7 @@ public class Bispo extends Peca{
         for (int i = (possicaoNoTabuleiro % 8 == 0 ? -1 : possicaoNoTabuleiro-9); i > 0; i-=9) {
             Posicao posicao = tabuleiro.getPosicoes().get(i);
             verificaPeca(posicao, possiveisMovimentos);
-            if (i %8==0){
+            if (i %8==0 || verificaPeca(posicao, possiveisMovimentos)){
                 break;
             }
         }
